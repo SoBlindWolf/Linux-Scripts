@@ -10,7 +10,7 @@ done
 while true; do
     read -p "Do you wish to install SoBlindWolf's Mozilla Addons/Extensions? (Each Install Optional) [Y/n]" yn
     case $yn in
-        [Yy]* ) sudo wget https://raw.githubusercontent.com/SoBlindWolf/Linux-Scripts/master/auto-install-mozilla-extras.sh && sudo chmod +x auto-install-mozilla-extras.sh && sudo ./auto-install-mozilla-extras.sh && sudo rm auto-install-mozilla-extras.sh; break;;
+        [Yy]* ) sudo wget -O /usr/local/sbin/mozilla-extension-manager https://raw.githubusercontent.com/NicolasBernaerts/ubuntu-scripts/master/mozilla/mozilla-extension-manager && sudo chmod +x /usr/local/sbin/mozilla-extension-manager && sudo wget https://raw.githubusercontent.com/SoBlindWolf/Linux-Scripts/master/auto-install-mozilla-extras.sh && sudo chmod +x auto-install-mozilla-extras.sh && sudo ./auto-install-mozilla-extras.sh; break;;
         [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
