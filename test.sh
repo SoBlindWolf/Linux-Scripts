@@ -7,7 +7,7 @@ ddir="/var/www/html/clients/example"
 echo "This will create a new VirtualHost file..."
 read -p "Client ID: " client
 read -p "Main Domain: " cdom
-read -p "Email User: " cdem
+read -p "Email Address: " cdem
 echo "This will make a vhost with Client as $client with $domain using the email address $email@$domain with website located in $webdir/$client/"
 sudo mkdir $ddir
 cdir="$webdir/$client"
