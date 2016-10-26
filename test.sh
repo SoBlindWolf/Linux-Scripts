@@ -10,7 +10,7 @@ read -p "Main Domain: " cdom
 read -p "Email User: " cdem
 echo "This will make a vhost with Client as $client with $domain using the email address $email@$domain with website located in $webdir/$client/"
 cdir="$webdir/$client/"
-cd $a2sa && sudo cp 00-$ddom.conf 00-$cdom.conf
-sudo sed -i "s/$ddom/$cdom/g" 00-$cdom.conf
-sudo sed -i "s/$ddem/$cdem/g" 00-$cdom.conf
-sudo sed -i "s/$ddir/$cdir/g" 00-$cdom.conf
+cd $a2sa && sudo cp 000-$ddom.conf 000-$cdom.conf
+sudo sed -i "s/$ddom/$cdom/g" 000-$cdom.conf
+sudo sed -i "s/$ddem/$cdem/g" 000-$cdom.conf
+sudo sed -i "s/$ddir/$cdir/g" 000-$cdom.conf
