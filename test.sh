@@ -9,7 +9,7 @@ read -p "Client ID: " client
 read -p "Main Domain: " cdom
 read -p "Email User: " cdem
 echo "This will make a vhost with Client as $client with $domain using the email address $email@$domain with website located in $webdir/$client/"
-sudo mkdir $webdir
+sudo mkdir $ddir
 cdir="$webdir/$client"
 #cdir="($webdir)/($client)"
 cd $a2sa && sudo cp 000-$ddom.conf 000-$cdom.conf
