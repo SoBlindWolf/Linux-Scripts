@@ -15,5 +15,5 @@ cdir="$webdir/$client"
 cd $a2sa && sudo cp 000-$ddom.conf 000-$cdom.conf
 sudo sed -i "s/$ddom/$cdom/g" 000-$cdom.conf
 sudo sed -i "s/$ddem/$cdem/g" 000-$cdom.conf
-sudo sed -i "s/$ddir/$cdir/g" 000-$cdom.conf
+sudo sed -i "s/'$ddir'/'$cdir'/g" 000-$cdom.conf
 sudo mv $ddir $cdir
