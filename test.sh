@@ -1,10 +1,11 @@
+while true; do
 a2sa="/etc/apache2/sites-available/"
 webdir="/var/www/html/clients"
 ddom="example.domain"
 ddem="webmaster@example.domain"
 ddir="/var/www/html/clients/example"
 
-echo "This will create a new VirtualHost file..."
+echo "This will create a new VirtualHost file... Press CTRL + C to Cancel."
 read -p "Client ID: " cli
 read -p "Main Domain: " cdom
 read -p "Email User: " cdem
@@ -12,7 +13,7 @@ echo "This will make a vhost with Client as $cli with $cdom using the email addr
 cdir="$webdir/$cli"
 ccem="$cdem@$cdom"
 
-while true; do
+#while true; do
     read -p "Is this information correct? [Y/n]" yn
     case $yn in
         [Yy]* ) sudo mkdir $ddir \
