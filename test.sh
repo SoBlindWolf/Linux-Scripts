@@ -1,5 +1,4 @@
-$a2sa = "/etc/apache2/sites-available/"
-$webdir = "/var/www/html/clients/"
+while $a2sa = "/etc/apache2/sites-available/" && $webdir = "/var/www/html/clients/"
 
 echo "This will create a new VirtualHost file..."
 read -p "Client ID: " client
