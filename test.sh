@@ -16,12 +16,12 @@ while true; do
     read -p "Is this information correct? [Y/n]" yn
     case $yn in
         [Yy]* ) sudo mkdir $ddir 
-		&& cd $a2sa 
-		&& sudo cp 000-$ddom.conf 000-$cdom.conf 
-		&& sudo sed -i "s/$ddem/$ccem/g" 000-$cdom.conf 
-		&& sudo sed -i "s/$ddom/$cdom/g" 000-$cdom.conf 
-		&& sudo sed -i "s|$webdir|$cdir|g" 000-$cdom.conf 
-		&& sudo mv $ddir $cdir; break;;
+		\ && cd $a2sa 
+		\ && sudo cp 000-$ddom.conf 000-$cdom.conf 
+		\ && sudo sed -i "s/$ddem/$ccem/g" 000-$cdom.conf 
+		\ && sudo sed -i "s/$ddom/$cdom/g" 000-$cdom.conf 
+		\ && sudo sed -i "s|$webdir|$cdir|g" 000-$cdom.conf 
+		\ && sudo mv $ddir $cdir; break;;
         [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
