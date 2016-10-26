@@ -23,7 +23,7 @@ ccem="$cdem@$cdom"
 		&& sudo sed -i "s/$ddom/$cdom/g" 000-$cdom.conf \
 		&& sudo sed -i "s|$webdir|$cdir|g" 000-$cdom.conf \
 		&& sudo mv $ddir $cdir; break;;
-        [Nn]* ) break;;
+        [Nn]* ) read true;;
         * ) echo "Please answer yes or no.";;
     esac
 done
