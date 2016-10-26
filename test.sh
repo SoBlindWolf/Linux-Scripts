@@ -9,10 +9,25 @@ read -p "Client ID: " client
 read -p "Main Domain: " cdom
 read -p "Email Address: " cdem
 echo "This will make a vhost with Client as $client with $domain using the email address $email@$domain with website located in $webdir/$client/"
-sudo mkdir $ddir
-cdir="$webdir/$client"
-cd $a2sa && sudo cp 000-$ddom.conf 000-$cdom.conf
-sudo sed -i "s|$ddom|$cdom|g" 000-$cdom.conf
-sudo sed -i "s|$ddem|$cdem|g" 000-$cdom.conf
-sudo sed -i "s|$webdir|$cdir|g" 000-$cdom.conf
+while true; do
+    read -p "Do you wish to install theme/icons? [Y/n]" yn
+    case $yn in
+        [Yy]* ) 
+        sudo mkdir $ddir
+        && cdir="$webdir/$client"
+        && cd $a2sa && sudo cp 000-$ddom.conf 000-$cdom.conf
+        && sudo sed -i "s|$ddom|$cdom|g" 000-$cdom.conf
+        && sudo sed -i "s|$ddem|$cdem|g" 000-$cdom.conf
+        && sudo sed -i "s|$webdir|$cdir|g" 000-$cdom.conf
+        && sudo mv $ddir $cdir; break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+#sudo mkdir $ddir
+#cdir="$webdir/$client"
+#cd $a2sa && sudo cp 000-$ddom.conf 000-$cdom.conf
+#sudo sed -i "s|$ddom|$cdom|g" 000-$cdom.conf
+#sudo sed -i "s|$ddem|$cdem|g" 000-$cdom.conf
+#sudo sed -i "s|$webdir|$cdir|g" 000-$cdom.conf
 sudo mv $ddir $cdir
