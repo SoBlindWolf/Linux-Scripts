@@ -13,7 +13,7 @@ sudo mkdir $ddir
 cdir="$webdir/$cli"
 ccem="$cdem@$cdom"
 cd $a2sa && sudo cp 000-$ddom.conf 000-$cdom.conf
-sudo sed -i "s/$ddom/$cdom/g" 000-$cdom.conf
 sudo sed -i "s/$ddem/$ccem/g" 000-$cdom.conf
+sudo sed -i "s/$ddom/$cdom/g" 000-$cdom.conf
 sudo sed -i "s|$webdir|$cdir|g" 000-$cdom.conf
 sudo mv $ddir $cdir
