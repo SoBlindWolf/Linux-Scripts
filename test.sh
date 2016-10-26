@@ -5,14 +5,15 @@ ddem="webmaster@example.domain"
 ddir="/var/www/html/clients/example"
 
 echo "This will create a new VirtualHost file..."
-read -p "Client ID: " client
+read -p "Client ID: " cli
 read -p "Main Domain: " cdom
-read -p "Email Address: " cdem
-echo "This will make a vhost with Client as $client with $domain using the email address $email@$domain with website located in $webdir/$client/"
+read -p "Email User: " cdem
+echo "This will make a vhost with Client as $cli with $cdom using the email address $cdem@$cdom with website located in $webdir/$cli/"
 sudo mkdir $ddir
-cdir="$webdir/$client"
+cdir="$webdir/$cli"
+ccem="$cdem@$cdom"
 cd $a2sa && sudo cp 000-$ddom.conf 000-$cdom.conf
-sudo sed -i "s|$ddom|$cdom|g" 000-$cdom.conf
-sudo sed -i "s|$ddem|$cdem|g" 000-$cdom.conf
+sudo sed -i "s/$ddom/$cdom/g" 000-$cdom.conf
+sudo sed -i "s/$ddem/$ccem/g" 000-$cdom.conf
 sudo sed -i "s|$webdir|$cdir|g" 000-$cdom.conf
 sudo mv $ddir $cdir
