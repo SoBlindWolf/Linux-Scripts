@@ -1,4 +1,6 @@
+echo "This will create a new VirtualHost file..."
+read -p "Client: " client
 read -p "Domain: " domain
 read -p "Email: " email
 read -p "Directory: " dir
-echo "The domain is '$domain' with the email '$email' and the website directory is '$dir'"
+echo "This will create a new VirtualHost for client '$client' with domain as '$domain' in '$dir'"
