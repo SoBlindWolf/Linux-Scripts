@@ -1,4 +1,4 @@
-while true; do
+while [ "$yn" != "Yes" ]; do
 a2sa="/etc/apache2/sites-available/"
 webdir="/var/www/html/clients"
 ddom="example.domain"
@@ -23,7 +23,7 @@ ccem="$cdem@$cdom"
 		&& sudo sed -i "s/$ddom/$cdom/g" 000-$cdom.conf \
 		&& sudo sed -i "s|$webdir|$cdir|g" 000-$cdom.conf \
 		&& sudo mv $ddir $cdir; break;;
-        [Nn]* ) read true;;
+        [Nn]* ) read yn;;
         * ) echo "Please answer yes or no.";;
     esac
 done
