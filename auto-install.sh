@@ -9,7 +9,7 @@ done
 while true; do
     read -p "Do you wish to install opt packages? [Y/n]" yn
     case $yn in
-        [Yy]* ) sudo apt-get update && sudo apt-get install make ncdu subversion -y && sudo apt-get autoremove -y && sudo apt-get clean -y; break;;
+        [Yy]* ) sudo curl -sSL https://get.docker.com/ | sh && sudo apt-get update && sudo apt-get install make ncdu subversion -y && sudo apt-get autoremove -y && sudo apt-get clean -y; break;;
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
